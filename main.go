@@ -100,9 +100,10 @@ func main() {
 		}
 		if commits[0].Sha != MostRecentSha {
 			log.Println("wow new sha")
+			MostRecentSha = commits[0].Sha
 			for k, v := range commands {
 				cmd := exec.Command(v[0], v[1:]...)
-				stdout, err := cmd.Output()
+				_, err := cmd.Output()
 				if err != nil {
 					if k == 0 { // Kill session doesn't work ( none exists)
 						continue
@@ -110,7 +111,6 @@ func main() {
 					log.Println(err)
 					return
 				}
-				log.Println("STdout", stdout)
 			}
 		}
 		time.Sleep(10 * time.Second)
