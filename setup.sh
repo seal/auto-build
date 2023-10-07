@@ -3,8 +3,8 @@
 # Place all your setup commands here
 
 # Clone the repository
-git clone <repo-url>
-cd <repo-directory>
+git clone https://github.com/seal/auto-build
+cd auto-build
 
 # Ask for config details from the user
 echo "Enter GitHub Token:"
@@ -33,10 +33,12 @@ go build -o myprogram
 
 # Install the Go program as a systemctl service
 # (Note: You might need appropriate permissions to install as a systemctl service)
-sudo cp myprogram /usr/local/bin/
-sudo cp myprogram.service /etc/systemd/system/
-sudo systemctl enable myprogram.service
-sudo systemctl start myprogram.service
+#sudo cp myprogram /usr/local/bin/
+#sudo cp myprogram.service /etc/systemd/system/
+#sudo systemctl enable myprogram.service
+#sudo systemctl start myprogram.service
 
-echo "Setup complete. The program is running as a background systemctl task."
+echo "Setup complete. Start program in new tmux session."
+
+
 
