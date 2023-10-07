@@ -98,7 +98,7 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		if commits[0].Sha == MostRecentSha {
+		if commits[0].Sha != MostRecentSha {
 			log.Println("wow new sha")
 			for k, v := range commands {
 				cmd := exec.Command(v[0], v[1:]...)
